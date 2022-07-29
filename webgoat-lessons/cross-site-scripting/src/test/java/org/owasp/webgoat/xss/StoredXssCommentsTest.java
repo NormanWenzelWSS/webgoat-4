@@ -84,6 +84,7 @@ public class StoredXssCommentsTest extends AssignmentEndpointTest {
         ResultActions taintedResults = mockMvc.perform(MockMvcRequestBuilders.get("/CrossSiteScriptingStored/stored-xss"));
         MvcResult mvcResult = taintedResults.andReturn();
         assert(mvcResult.getResponse().getContentAsString().contains("<script>console.warn"));
+        
     }
 
     //Could be used to test an encoding solution ... commented out so build will pass. Uncommenting will fail build, but leaving in as positive Security Unit Test
